@@ -1,0 +1,74 @@
+@import "./../../sass/variables";
+@import "./../../sass/mixins";
+
+.heading{
+    position: absolute;
+    top: 50%;
+    left: 7.5%;
+    padding: .75rem 3rem;
+    max-width: 40%;
+    background-color: $red5;
+    transform: translateY(-50%) skew(-12deg);
+    &_text{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 600;
+        font-size: 7rem;
+        margin: 0;
+        transform: skew(12deg);
+        color: #ffffff;
+
+        @include respond(phone){
+            font-size: 2rem;
+            
+        }
+    }
+
+    @include respond(phone){
+        top: 5vh;
+        left: 50%;
+        transform: translateX(-50%) skew(-12deg);
+    }
+}
+
+.main{
+    height: 90vh;
+    width: 50vw;
+    background-color: #fff;
+    z-index: 1;
+    background-color: #335;
+    max-width: 50vw;
+    max-height: 90vh;
+    border: solid .1rem #224;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: .5rem;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+
+    &_stickContainer{
+        flex: 1;
+        background: inherit;
+    }
+    &_contentContainer{
+        flex: 5;
+        overflow-y: scroll;
+        padding: 2rem;
+        background: inherit;
+    }
+    &_buttonContainer{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    @include respond(phone){
+        width: 100vw;
+        margin-top: 20vh;
+        min-width: 100vw;
+        min-height: 100vh;
+    }
+}
